@@ -21,7 +21,7 @@ class ErasmusStudent(Person):
         super().__init__(**kwargs)
 
     def shout(self) -> str:
-        return self.country
+        return super().shout() + " "+ self.country
 if __name__ == '__main__':
     s1:Student = Student("john", "connor")
     print("-Student 1-")
