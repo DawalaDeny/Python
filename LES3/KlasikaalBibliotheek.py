@@ -10,6 +10,7 @@ class Bibliotheek:
             self.n +=1
             return f"Book{self.n}"
         else:
+            self.n = 0 #iterator reset'n
             raise StopIteration
 
 if __name__ == '__main__':
