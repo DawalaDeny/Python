@@ -1,8 +1,9 @@
+from Ship import Ship
 class Ocean:
-    def __init__(self, grooteSpeelveld:int, aantalschepen:int):
+    def __init__(self,boot:Ship, grooteSpeelveld:int):
         self.speelveld = [["."]*grooteSpeelveld] * grooteSpeelveld
         self.range = grooteSpeelveld
-        self.aantalSchepen = aantalschepen
+        self.boot = boot
 
     def opvullenSpeelveld(self):
         rijI = 0
@@ -14,9 +15,9 @@ class Ocean:
             rijI += 1
             if (rijI < self.range):
                 str += f"\n{rijI} "
-
         print(str)
 
 if __name__ == '__main__':
-    ocean1 = Ocean(grooteSpeelveld=5, aantalschepen=1)
-    ocean1.opvullenSpeelveld()
+    boot:Ship = Ship(lengte=5)
+    o = Ocean(boot, grooteSpeelveld=5)
+    o.opvullenSpeelveld()
