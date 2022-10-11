@@ -7,17 +7,14 @@ class Ocean:
 
     def opvullenSpeelveld(self):
         rijI = 0
-        str:str = f"  0 1 2 3 4\n"
-        str += f"{rijI} "
+        output:str = f"  0 1 2 3 4\n"
+        output += f"{rijI} "
         for i in range(self.range):
             for j in range(self.range):
-                str += f"{self.speelveld[i][j]} "
+                output += f"{self.speelveld[i][j]} "
             rijI += 1
             if (rijI < self.range):
-                str += f"\n{rijI} "
-        print(str)
+                output += f"\n{rijI} "
+        print(output)
 
-if __name__ == '__main__':
-    boot:Ship = Ship(lengte=5)
-    o = Ocean(boot, grooteSpeelveld=5)
-    o.opvullenSpeelveld()
+
