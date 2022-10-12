@@ -1,6 +1,6 @@
 import Ocean
 class Player:
-    def __init__(self, naam:str, ocean:Ocean, aantalBommen:int):
+    def __init__(self,ocean:Ocean, naam:str,  aantalBommen:int):
         self.naam = naam
         self.aantalBeschikbareBommen = aantalBommen
         self.gegooideBommen = 0
