@@ -48,7 +48,10 @@ if __name__ == '__main__':
             speler.bomGegooid()
             if boot.isBootGeraakt(rij, kol):
                 oceaan.hit(rij,kol)
-
+                if boot.lengte == boot.geraaktedelen:
+                    print("Je hebt gewonnen")
+                    print(f"Je hebt {speler.aantalBeschikbareBommen} bommen overD")
+                    exit()
             else:
                 oceaan.mis(rij,kol)
 
