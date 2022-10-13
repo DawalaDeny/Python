@@ -8,7 +8,12 @@ class Ocean:
 
     def opvullenSpeelveld(self):
         rijI = 0
-        output:str = f"  0 1 2 3 4\n"
+        output:str = "  0"
+        index = 1
+        for i in range(self.range-1):
+            output += f" {index}"
+            index +=1
+        output +="\n"
         output += f"{rijI} "
         for i in range(self.range):
             for j in range(self.range):
@@ -71,8 +76,12 @@ class Ocean:
                     randomRichting: str = random.choice(["Noord", "Oost", "Zuid", "West"])
 
 
-
-
+    def hit(self, rij, kol):
+        print("hit")
+        self.speelveld[rij][kol] = "0"
+    def mis(self, rij, kol):
+        print("mis")
+        self.speelveld[rij][kol] = "X"
 
 
 
