@@ -1,8 +1,10 @@
-from LES4.gameobjects.Ocean import Ocean
-from LES4.gameobjects.Ship import Ship
-from LES4.gameobjects.Player import Player
+from gameobjects.Player import Player
+from gameobjects.Ocean import Ocean
+from gameobjects.Ship import Ship
+
+
 import time
-#Waarom werkt dit niet als je dit buiten gameobjects plaatst?
+
 
 
 class Battleship:
@@ -32,7 +34,7 @@ if __name__ == '__main__':
         else:
             print(f"Gelieve een getal in te geven groter dan 2")
             bommen = int(input())
-    boot:Ship = Ship(lengte=3)
+    boot:Ship = Ship(3)
     oceaan:Ocean = Ocean(boot,grooteSpeelveld=groote)
     speler: Player = Player(oceaan, naam=naam, aantalBommen=bommen)
     oceaan.locatieBootBepalen()
@@ -50,15 +52,10 @@ if __name__ == '__main__':
                 oceaan.hit(rij,kol)
                 if boot.lengte == boot.geraaktedelen:
                     print("Je hebt gewonnen")
-                    print(f"Je hebt {speler.aantalBeschikbareBommen} bommen overD")
+                    print(f"Je hebt {speler.aantalBeschikbareBommen} bom(men) over")
                     exit()
             else:
                 oceaan.mis(rij,kol)
-
-    #oceaan.locatieBootBepalen()
-    #oceaan.opvullenSpeelveld()
-    #print(boot.getPositie())
-
 
 
 

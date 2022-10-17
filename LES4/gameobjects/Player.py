@@ -1,4 +1,4 @@
-import Ocean
+from LES4.gameobjects import Ocean
 class Player:
     def __init__(self,ocean:Ocean, naam:str,  aantalBommen:int):
         self.naam = naam
