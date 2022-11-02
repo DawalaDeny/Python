@@ -1,5 +1,5 @@
 class Civilian:
-    def __int__(self, name:str):
+    def __init__(self, name:str):
         self.name=name
     def get_name(self):
         return self.name
