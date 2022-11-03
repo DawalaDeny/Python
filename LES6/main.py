@@ -26,6 +26,12 @@ if __name__ == '__main__':
     c.embark(civ1)
     c.embark(civ2)
     c.sail((True,True))
+    # print(len(c.getpassengers()))
+    # c.disembark(civ2)
+    # print(len(c.getpassengers()))
+    # c.disembark(civ1)
+    # print(len(c.getpassengers()))
+    # c.disembark(civ1)
     print(c)
 
 

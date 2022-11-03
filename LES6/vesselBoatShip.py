@@ -82,14 +82,16 @@ class Boat(Vessel):
         if len(self.passengers) > 0:
             gevonden = False
             i=0
-            while not gevonden & i < len(self.passengers):
+            while gevonden == False & i < len(self.passengers):
                 x = self.passengers[i]
                 if x == passegier:
                     gevonden = True
                 i+=1
-            if gevonden:
+            if gevonden == True:
                 self.passengers.remove(passegier)
             else:
                 print(f"Passegier met de naam {passegier.get_name()} is niet aanwezig")
         else:
             print("Er zijn momenteel 0 passegiers aan boord.")
+    def getpassengers(self):
+        return self.passengers
