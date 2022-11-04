@@ -1,5 +1,5 @@
 from kapiteinPiraat import *
-from vesselBoatShip import Vessel, Boat
+from vesselBoatShip import Vessel, Boat, Ship
 from civilian import Civilian
 
 if __name__ == '__main__':
@@ -34,4 +34,12 @@ if __name__ == '__main__':
     # c.disembark(civ1)
     print(c)
 
-
+    d = Ship(name="a", masts=2, acceleration=2, img_path="/IMG/silentmary.jpg")
+    print(d)
+    d.embark(k)
+    print(d)
+    d.sail((True, True))
+    d.disembark(p1)
+    print(d)
+    d.disembark(p1)
+    print(d)

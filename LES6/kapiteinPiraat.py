@@ -52,5 +52,5 @@ class Kapitein(Piraat):
     def __str__(self):
         output:str = f"Captain {self.naam} has {len(self.crew)} crewmembers."
         return output
-    def get_crew(self):
+    def get_crew(self) -> list:
         return self.crew
