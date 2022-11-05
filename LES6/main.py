@@ -9,6 +9,8 @@ if __name__ == '__main__':
     p2 = Piraat(naam="Hack")
     p3 = Piraat(naam="Reck")
 
+    k.get_crew()
+
     k.add_crewmember(p1)
     k.add_crewmember(p2)
     k.add_crewmember(p3)

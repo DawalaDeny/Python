@@ -1,14 +1,4 @@
-class Piraat:
-    def __init__(self, naam:str, quote:str = "Ahoy!"):
-        self.naam = naam
-        self.quote = quote
-    def get_naam(self):
-        return self.naam
-    def get_quote(self):
-        return self.quote
-    def __str__(self):
-        output:str = f"Pirate {self.naam} says {self.quote}"
-        return output
+from Piraat import Piraat
 class Kapitein(Piraat):
     def __init__(self, naam: str, quote: str = "Ahoy"):
         self.crew = []
@@ -18,12 +8,11 @@ class Kapitein(Piraat):
             i=0
             gevonden=False
             if len(self.crew) > 0:
-                while not gevonden & i < len(self.crew):
+                while i < len(self.crew) and gevonden == False:
                     item = self.crew[i]
                     if crewmember == item:
                         gevonden = True
                     i +=1
-                    print("lala")
                 if not gevonden:
                     self.crew.append(crewmember)
                 else:

@@ -137,8 +137,6 @@ class Ship(Vessel):
                 self.captain = None
             elif isinstance(passenger, Piraat):
                 crew = self.captain.get_crew
-                print(crew)
-                print(crew)
                 i = 0
                 gevonden = False
                 while i < len(crew):
@@ -154,6 +152,8 @@ class Ship(Vessel):
     def sail(self, windstream: tuple[bool, bool]):
         if self.captain is not None:
             super(Ship, self).sail(windstream)
+        print(self.captain.get_crew)
+        print(self.captain)
     def __str__(self):
         return f"Name of the ship is: {self.name} \n" \
                f"The captain is: {self.captain} \n" \
