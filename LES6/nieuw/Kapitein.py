@@ -39,7 +39,7 @@ class Kapitein(Piraat):
             print("Can only remove pirates")
 
     def __str__(self):
-        output:str = f"Captain {self.naam} has {len(self.crew)} crewmembers."
+        output:str = f"Captain {self.naam} has {len(self.crew)} crewmembers says: {self.quote}"
         return output
     def get_crew(self) -> list:
         return self.crew

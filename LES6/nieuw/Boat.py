@@ -12,7 +12,10 @@ class Boat(Vessel):
             self.speed = 0
 
     def __str__(self):
-        return f"naam boot: {self.name} met {len(self.passengers)} passegiers met een snelheid" \
+        if self.passengers is not None:
+            return f"{self.name} is just floating with {len(self.passengers)} passengers."
+        else:
+            return f"naam boot: {self.name} met 0 passegiers met een snelheid" \
                f" van {self.speed} km/h"
 
     def sail(self, windstream: tuple[bool,bool]):
@@ -37,7 +40,7 @@ class Boat(Vessel):
             print("Dit is geen passegier")
 
     def disembark(self, passegier=None):
-        self.passengers = None
+        self.passengers = passegier
 
     def getpassengers(self):
         return self.passengers

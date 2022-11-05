@@ -23,6 +23,7 @@ class Ship(Vessel):
                     pass
                 elif len(self.captain.get_crew()) < len(passenger.get_crew()):
                     self.captain = passenger
+                    print(f"{self.captain.get_naam()} has taken over! (crew: 2 members) The new captain says: {self.captain.get_quote()}")
                 else:
                     rand = random
                     i = rand.randint(0, 1)
@@ -36,34 +37,38 @@ class Ship(Vessel):
         else:
             print("Error, only a pirate or a captain can enter the ship!")
 
-    def disembark(self, passenger):
-        if self.captain is None:
-            print("There is no captain on board!")
-        else:
-            if isinstance(passenger, Kapitein):
-                self.captain = None
-            elif isinstance(passenger, Piraat):
-                crew = self.captain.get_crew
-                i = 0
-                gevonden = False
-                while i < len(crew):
-                    if crew[i] == passenger:
-                        self.captain.remove_crewmember(passenger)
-                        gevonden = True
+    def disembark(self, passenger=None):
+            if self.captain is None:
+                print("There is no captain on board!")
+            else:
+                if isinstance(passenger, Kapitein):
+                    self.captain = None
+                elif isinstance(passenger, Piraat):
+                    crew = self.captain.get_crew()
+                    i = 0
+                    gevonden = False
+                    while i < len(crew):
+                        if crew[i] == passenger:
+                            self.captain.remove_crewmember(passenger)
+                            gevonden = True
+                        else:
+                            i +=1
+                    if gevonden:
+                        print(f"Piraat: {passenger.get_naam()} is succesvol verwijderd")
                     else:
-                        i +=1
-                if gevonden:
-                    print(f"Piraat: {passenger.get_naam()} is succesvol verwijderd")
+                        print(f"Piraat: {passenger.get_naam()} is NIET succesvol verwijderd")
                 else:
-                    print(f"Piraat: {passenger.get_naam()} is NIET succesvol verwijderd")
+                    print("Only a captain or a pirate can be disembarked!")
 
     def sail(self, windstream: tuple[bool, bool]):
         if self.captain is not None:
             super(Ship, self).sail(windstream)
-        print(self.captain.get_crew)
-        print(self.captain)
+        print(self.__str__())
 
     def __str__(self):
-        return f"Name of the ship is: {self.name} \n" \
-               f"The captain is: {self.captain} \n" \
-               f"Speed is: {self.speed}"
+        if self.captain is None:
+            return f"{self.name} is just floating with no captain."
+        elif self.speed == 0:
+            return f"{self.name} is just floating with {self.captain.get_naam()} as it's captain! (crew: {len(self.captain.get_crew())} members) "
+        else:
+            return f"{self.name} has set sail! Full speed ahead! ({self.speed} km/h) "
