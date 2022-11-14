@@ -7,6 +7,7 @@ from fishingboat import FishingBoat
 from rescueboat import RescueBoat
 from silentmary import SilentMary
 from blackpearl import BlackPearl
+
 if __name__ == '__main__':
 
   jackSparrow = Kapitein(naam="Jack Sparrow",

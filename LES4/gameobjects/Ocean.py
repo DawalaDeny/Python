@@ -62,6 +62,9 @@ class Ocean:
                 if ifke >= -1:
                     list = [[huidigelocatie[0], huidigelocatie[1]], [huidigelocatie[0], huidigelocatie[1] - 1],[huidigelocatie[0], huidigelocatie[1] - 2]]
                     self.boot.setPositie(list)
+                    # self.speelveld[huidigelocatie[0]][huidigelocatie[1]] = "O"
+                    # self.speelveld[huidigelocatie[0]][huidigelocatie[1] - 1] = "O"
+                    # self.speelveld[huidigelocatie[0]][huidigelocatie[1] - 2] = "O"
                     zoeken = False
                 else:
                     randomRichting: str = random.choice(["Noord", "Oost", "Zuid", "West"])
